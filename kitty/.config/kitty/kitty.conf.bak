@@ -1,4 +1,5 @@
 # kitty.conf
+include ./catppuccin-mocha.conf # Assuming we will create this for color schemes
 allow_remote_control yes
 listen_on unix:/tmp/mykitty
 term xterm-256color
@@ -6,9 +7,3 @@ font_family MesloLGS Nerd Font Mono 14
 bold_font auto
 italic_font auto
 bold_italic_font auto
-
-
-# BEGIN_KITTY_THEME
-# Catppuccin-Mocha
-include ./catppuccin-mocha.conf
-# END_KITTY_THEME

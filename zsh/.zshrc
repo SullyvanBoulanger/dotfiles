@@ -33,7 +33,7 @@ zinit cdreplay -q
 eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/zen.toml)"
 
 # Keybindings
-bindkey -v
+# bindkey -v
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
 bindkey '^[w' kill-region
