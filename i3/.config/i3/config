@@ -15,31 +15,18 @@ set $mod Mod4
 # set $mod Mod1
 
 # setup
-exec --no-startup-id picom
-exec --no-startup-id feh --bg-scale ~/backgrounds/nice-blue-background.png
-exec --no-startup-id xrdb -merge ~/.Xresources
+exec_always --no-startup-id picom
+exec_always --no-startup-id feh --bg-scale ~/backgrounds/prairieAux1000Fleurs.png
+# exec --no-startup-id xrdb -merge ~/.Xresources
 exec_always --no-startup-id setxkbmap -option ctrl:nocaps
 
 # kill any hanging polybar processes
 exec_always killall polybar
 exec_always --no-startup-id ~/.config/polybar/launch_polybar.sh
 
-bindsym Print exec maim "/home/$USER/Pictures/$(date).jpg"
-bindsym $mod+Print exec maim --window $(xdotool getactivewindow) "/home/$USER/Pictures/$(date).jpg"
-bindsym Shift+Print exec maim --select "/home/$USER/Pictures/$(date).jpg"
-
-## Clipboard Screenshots
-bindsym Ctrl+Print exec maim | xclip -selection clipboard -t image/png
-bindsym Ctrl+$mod+Print exec maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
-bindsym Ctrl+Shift+Print exec maim --select | xclip -selection clipboard -t image/png
-
-# Font for window titles. Will also be used by the bar unless a different font
+Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 font pango:MesloLGS Nerd Font Mono Bold 14
-
-# This font is widely installed, provides lots of unicode glyphs, right-to-left
-# text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:DejaVu Sans Mono 8
 
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
@@ -71,10 +58,12 @@ floating_modifier $mod
 # start rofi (a program launcher)
 bindsym $mod+d exec --no-startup-id rofi -show drun
 bindsym $mod+space exec --no-startup-id rofi -show combi
-bindsym $mod+Tab exec --no-startup-id rofi -show window
 
 # start a terminal
 bindsym $mod+Return exec kitty
+
+# start firefox
+bindsym $mod+b exec firefox
 
 # lock screen
 bindsym $mod+p exec betterlockscreen -l dim
@@ -105,15 +94,15 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # resize focused window
-bindsym $mod+Shift+h resize shrink width 10 px or 10 ppt
-bindsym $mod+Shift+j resize grow height 10 px or 10 ppt
-bindsym $mod+Shift+k resize shrink height 10 px or 10 ppt
-bindsym $mod+Shift+l resize grow width 10 px or 10 ppt
+bindsym $mod+Ctrl+h resize shrink width 10 px or 10 ppt
+bindsym $mod+Ctrl+j resize grow height 10 px or 10 ppt
+bindsym $mod+Ctrl+k resize shrink height 10 px or 10 ppt
+bindsym $mod+Ctrl+l resize grow width 10 px or 10 ppt
 # alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left resize shrink width 10 px or 10 ppt
-bindsym $mod+Shift+Down resize grow height 10 px or 10 ppt
-bindsym $mod+Shift+Up resize shrink height 10 px or 10 ppt
-bindsym $mod+Shift+Right resize grow width 10 px or 10 ppt
+bindsym $mod+Ctrl+Left resize shrink width 10 px or 10 ppt
+bindsym $mod+Ctrl+Down resize grow height 10 px or 10 ppt
+bindsym $mod+Ctrl+Up resize shrink height 10 px or 10 ppt
+bindsym $mod+Ctrl+Right resize grow width 10 px or 10 ppt
 
 
 # enter fullscreen mode for the focused container
@@ -128,10 +117,10 @@ bindsym $mod+Shift+e layout toggle split
 bindsym $mod+Shift+space floating toggle
 
 # focus the parent container
-bindsym $mod+Shift+a focus parent
+# bindsym $mod+Shift+a focus parent
 
 # focus the child container
-#bindsym $mod+Shift+d focus child
+# bindsym $mod+Shift+d focus child
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
@@ -175,7 +164,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+# bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
