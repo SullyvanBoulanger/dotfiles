@@ -1,0 +1,70 @@
+[user]
+	email = sullyvanboulanger@gmail.com
+	name = Sullyvan Boulanger
+[color]
+   ui = auto
+[core]
+   editor = nvim -f
+   longpaths = true
+   ignorecase = true
+[push]
+   default = upstream
+   autoSetupRemote = true
+[pull]
+   rebase = true
+[fetch]
+   prune = true
+[rebase]
+   autoStash = true
+[branch]
+   autosetuprebase = always
+[alias]
+   st = "!f() { cd ${GIT_PREFIX:-./}; git status; echo -e '\n\\033[0m# Stash list\\033[1;35m' && git --no-pager stash list; echo -e '\\033[0m\n# Ignored file\\033[35m' && git ignored; echo -ne '\\033[0m'; unset -f f; }; f"
+   co = checkout
+   conv = checkout --no-verify
+   ci = commit -m
+   ca = commit --amend
+   canv = commit --amend --no-verify
+   arc = "!f() { git add . && git rebase --continue; }; f"
+   ra = rebase --abort
+   rc = rebase --continue
+   br = branch
+   df = diff --ignore-space-change
+   unmerge = "!f() { cd ${GIT_PREFIX:-./}; git reset $@ && git co $@; unset -f f; }; f"
+   merge-diff = "!f() { cd ${GIT_PREFIX:-./}; "/C/Program\\ Files/WinMerge/WinMergeU.exe" $1 && git add $1 && git df --staged $1; unset -f f; }; f"
+   undo = reset --soft HEAD^                   # undo the last commit to change file into
+   redo = commit -c ORIG_HEAD                  # redo the last commit (and place the file added)
+   ls = ls-tree --name-only HEAD               # list versioned files
+   changes-info = diff --stat                  # show stat of change file between your HEAD and specific commit
+   changes = diff --name-status -r             # list file change between your HEAD and specific commit
+   lsci = show --pretty='format:' --name-only  # list file change in specific commit
+   info = show --pretty='format:' --stat --no-merges   # show stat of change file in specific commit
+   tree = log --graph --oneline --all --pretty=format:'%C(yellow)%h%Creset -%Cred%d%Creset %s %Cgreen%cr%Creset %C(cyan)<%an>%Creset'
+   mtree = tree --author="Boulanger"                       # list all commit for me
+   tree-w = tree --first-parent                        # list all commit inside branche without commit in merge branch
+   tree-x = tree --no-merges                           # list all commit with exclude merge commit
+   ll = log --all --pretty=format:'%C(yellow)%h%Creset -%Cred%d%Creset %s %Cgreen%cr%Creset %C(cyan)<%an>%Creset' --numstat
+   ignored = !git ls-files -v | grep "^[[:lower:]]"    # list all file in to ignore list (not gitignore)
+   ignore = update-index --assume-unchanged            # add file to ignore list (not gitignore)
+   unignore = update-index --no-assume-unchanged       # remove file to ignore list (not gitignore)
+   #ignored = !git ls-files -v | grep "^S"             # list all file in to ignore list (not gitignore)
+   #ignore = update-index --skip-worktree              # add file to ignore list (not gitignore)
+   #unignore = update-index --no-skip-worktree         # remove file to ignore list (not gitignore)
+   author = !git log --format='%C(cyan)%aN%Creset' | sort -u   # list all author on the project
+   author-mail = !git log --format='%C(cyan)%aN%Creset %Cgreen<%aE>%Creset' | sort -u  # list all author on the project (with mail)
+   sshow = "!f() { cd ${GIT_PREFIX:-./}; git stash show stash^{/$*}; unset -f f; }; f"     # show stash with search
+   sapply = "!f() { cd ${GIT_PREFIX:-./}; git stash apply stash^{/$*}; unset -f f; }; f"       # apply stash with search
+[credential]
+   helper = store
+[status]
+   submoduleSummary = true
+[diff]
+   wordRegex = .
+   submodule = log
+[difftool]
+   prompt = false
+[mergetool]
+   prompt = false
+   keepBackup = false
+[init]
+	defaultBranch = main
