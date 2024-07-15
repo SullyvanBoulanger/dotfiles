@@ -91,15 +91,15 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # resize focused window
-bindsym $mod+Ctrl+l resize shrink width 10 px or 10 ppt
-bindsym $mod+Ctrl+k resize grow height 10 px or 10 ppt
-bindsym $mod+Ctrl+j resize shrink height 10 px or 10 ppt
 bindsym $mod+Ctrl+h resize grow width 10 px or 10 ppt
+bindsym $mod+Ctrl+j resize shrink height 10 px or 10 ppt
+bindsym $mod+Ctrl+k resize grow height 10 px or 10 ppt
+bindsym $mod+Ctrl+l resize shrink width 10 px or 10 ppt
 # alternatively, you can use the cursor keys:
-bindsym $mod+Ctrl+Right resize shrink width 10 px or 10 ppt
-bindsym $mod+Ctrl+Up resize grow height 10 px or 10 ppt
-bindsym $mod+Ctrl+Down resize shrink height 10 px or 10 ppt
 bindsym $mod+Ctrl+Left resize grow width 10 px or 10 ppt
+bindsym $mod+Ctrl+Down resize shrink height 10 px or 10 ppt
+bindsym $mod+Ctrl+Up resize grow height 10 px or 10 ppt
+bindsym $mod+Ctrl+Right resize shrink width 10 px or 10 ppt
 
 # enter fullscreen mode for the focused container
 bindsym $mod+Shift+f fullscreen toggle
@@ -110,7 +110,7 @@ bindsym $mod+Shift+w layout tabbed
 bindsym $mod+Shift+e layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+# bindsym $mod+Shift+space floating toggle
 
 # focus the parent container
 # bindsym $mod+Shift+a focus parent
