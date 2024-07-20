@@ -16,7 +16,7 @@ set $mod Mod4
 # setup
 exec_always --no-startup-id picom
 exec_always --no-startup-id feh --bg-scale ~/backgrounds/prairieAux1000Fleurs.png
-exec_always --no-startup-id setxkbmap -option ctrl:nocaps
+# exec_always --no-startup-id setxkbmap -option ctrl:nocaps
 # kill any hanging polybar processes
 exec_always killall polybar
 exec_always --no-startup-id ~/.config/polybar/launch_polybar.sh
@@ -61,6 +61,9 @@ bindsym $mod+Return exec kitty
 
 # start firefox
 bindsym $mod+b exec firefox
+
+# print screen
+bindsym Print exec flameshot gui
 
 # lock screen
 bindsym $mod+p exec betterlockscreen -l dim
