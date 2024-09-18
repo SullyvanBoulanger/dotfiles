@@ -583,7 +583,7 @@ require("lazy").setup({
 				-- tsserver = {},
 				--
 				angularls = {},
-                basedpyright = {},
+				basedpyright = {},
 				bashls = {},
 				cssls = {},
 				dockerls = {},
@@ -593,8 +593,8 @@ require("lazy").setup({
 				html = {},
 				jdtls = {},
 				jsonls = {},
-                lemminx = {},
-                lua_ls = {
+				lemminx = {},
+				lua_ls = {
 					-- cmd = {...},
 					-- filetypes = { ...},
 					-- capabilities = {},

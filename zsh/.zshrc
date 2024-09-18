@@ -82,7 +82,9 @@ alias m-hdmi-2-w2='i3-msg "workspace 2, move workspace to output HDMI-2"'
 alias m-hdmi-2-off='xrandr --output HDMI-2 --off'
 alias m-dp-1-left-hdmi-2='xrandr --output DP-1 --auto --left-of HDMI-2'
 alias m-dp-1-w3='i3-msg "workspace 3, move workspace to output DP-1"'
-alias m-dp-1-off='xrandr --output DP-1 --off' 
+alias m-dp-1-off='xrandr --output DP-1 --off'
+alias m-nod='m-hdmi-2-above && m-dp-1-left-hdmi-2'
+alias x-trackpoint='xinput set-prop "TPPS/2 Elan TrackPoint" "Device Enabled" 0'
 
 # Shell integrations
 eval "$(fzf --zsh)"
@@ -105,4 +107,10 @@ export FZF_DEFAULT_OPTS=" \
 --color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
 --color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
 --color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8"
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)
+
+export ANDROID_HOME=~/avd
+export PATH=$PATH:$ANDROID_HOME/emulator:$ANDROID_HOME/platform-tools:$ANDROID_HOME/cmdline-tools/latest/bin
 
