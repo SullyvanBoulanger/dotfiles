@@ -15,7 +15,7 @@ set $mod Mod4
 
 # setup
 exec_always --no-startup-id picom
-exec_always --no-startup-id feh --bg-scale ~/backgrounds/prairieAux1000Fleurs.png
+exec_always --no-startup-id feh --bg-scale ~/backgrounds/ely_002.png
 # exec_always --no-startup-id setxkbmap -option ctrl:nocaps
 # kill any hanging polybar processes
 exec_always killall polybar

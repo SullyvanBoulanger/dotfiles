@@ -84,7 +84,8 @@ alias m-dp-1-left-hdmi-2='xrandr --output DP-1 --auto --left-of HDMI-2'
 alias m-dp-1-w3='i3-msg "workspace 3, move workspace to output DP-1"'
 alias m-dp-1-off='xrandr --output DP-1 --off'
 alias m-nod='m-hdmi-2-above && m-dp-1-left-hdmi-2'
-alias x-trackpoint='xinput set-prop "TPPS/2 Elan TrackPoint" "Device Enabled" 0'
+alias x-trackpoint-disable='xinput set-prop "TPPS/2 Elan TrackPoint" "Device Enabled" 0'
+alias x-trackpoint-enable='xinput set-prop "TPPS/2 Elan TrackPoint" "Device Enabled" 1'
 
 # Shell integrations
 eval "$(fzf --zsh)"
